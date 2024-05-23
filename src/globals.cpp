@@ -37,6 +37,8 @@ pros::MotorGroup rightMotors({4, -5, 6});
 pros::MotorGroup slamaMotors({-14, 15});
 pros::MotorGroup rollerMotors({-10, 11});
 
+// Wings
+pros::ADIDigitalOut wing_s('A');
 
 
 

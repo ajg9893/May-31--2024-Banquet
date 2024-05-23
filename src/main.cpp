@@ -98,5 +98,12 @@ void opcontrol() {
 	}*/
 
 	// Loops forever :)
+	while(true){
+		drive();
+		slama();
+		roller();
+		wings();
+	}
+	
 
 }

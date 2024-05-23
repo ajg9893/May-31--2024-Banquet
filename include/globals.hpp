@@ -24,10 +24,11 @@ extern pros::Motor roller_R;
 // Motor Groups
 extern pros::MotorGroup leftMotors;
 extern pros::MotorGroup rightMotors;
-extern pros::MotorGroup slamamotors;
+extern pros::MotorGroup slamaMotors;
 extern pros::MotorGroup rollerMotors;
 
-
+// Wings
+extern pros::ADIDigitalOut wing_s;
 
 //Drivetrain
 extern lemlib::Drivetrain drivetrain;
