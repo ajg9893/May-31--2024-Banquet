@@ -14,28 +14,28 @@
 */
 
 // Leftside Motors
-pros::Motor front_L(1, pros::v5::MotorGears::rpm_600, pros::v5::MotorUnits::counts);
-pros::Motor mid_L(2, pros::v5::MotorGears::rpm_200, pros::v5::MotorUnits::counts);
-pros::Motor back_L(3, pros::v5::MotorGears::rpm_600, pros::v5::MotorUnits::counts);
+pros::Motor front_L(18, pros::v5::MotorGears::rpm_600, pros::v5::MotorUnits::counts);
+pros::Motor mid_L(19, pros::v5::MotorGears::rpm_200, pros::v5::MotorUnits::counts);
+pros::Motor back_L(20, pros::v5::MotorGears::rpm_600, pros::v5::MotorUnits::counts);
 
 // Rightside Motors
-pros::Motor front_R(4, pros::v5::MotorGears::rpm_600, pros::v5::MotorUnits::counts);
-pros::Motor mid_R(5, pros::v5::MotorGears::rpm_200, pros::v5::MotorUnits::counts);
-pros::Motor back_R(6, pros::v5::MotorGears::rpm_600, pros::v5::MotorUnits::counts);
+pros::Motor front_R(13, pros::v5::MotorGears::rpm_600, pros::v5::MotorUnits::counts);
+pros::Motor mid_R(12, pros::v5::MotorGears::rpm_200, pros::v5::MotorUnits::counts);
+pros::Motor back_R(11, pros::v5::MotorGears::rpm_600, pros::v5::MotorUnits::counts);
 
 // Slama Motors
 pros::Motor slama_L(14, pros::v5::MotorGears::rpm_100, pros::v5::MotorUnits::counts);
 pros::Motor slama_R(15, pros::v5::MotorGears::rpm_100, pros::v5::MotorUnits::counts);
 
 // Roller Motors
-pros::Motor roller_L(10, pros::v5::MotorGears::rpm_200, pros::v5::MotorUnits::counts);
-pros::Motor roller_R(11, pros::v5::MotorGears::rpm_200, pros::v5::MotorUnits::counts);
+pros::Motor roller_L(2, pros::v5::MotorGears::rpm_200, pros::v5::MotorUnits::counts);
+pros::Motor roller_R(1, pros::v5::MotorGears::rpm_200, pros::v5::MotorUnits::counts);
 
 // Motor Groups
-pros::MotorGroup leftMotors({-1, 2, -3});
-pros::MotorGroup rightMotors({4, -5, 6});
+pros::MotorGroup leftMotors({-18, 19, -20});
+pros::MotorGroup rightMotors({13, -12, 11});
 pros::MotorGroup slamaMotors({-14, 15});
-pros::MotorGroup rollerMotors({-10, 11});
+pros::MotorGroup rollerMotors({-2, 1});
 
 // Wings
 pros::ADIDigitalOut wing_s('A');
