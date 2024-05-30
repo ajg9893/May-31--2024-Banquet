@@ -12,9 +12,11 @@ void drive(){
 
 
 	
-    int dir = -1*controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y); 
+    int dir = controller.get_analog(pros::E_CONTROLLER_ANALOG_LEFT_Y); 
+    
     int turn = controller.get_analog(pros::E_CONTROLLER_ANALOG_RIGHT_X);
-
+    turn = -turn;
+    dir = -dir;
     chassis.curvature(dir, turn);
 
     pros::delay(25);

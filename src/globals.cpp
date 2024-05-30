@@ -24,7 +24,7 @@ pros::Motor mid_R(12, pros::v5::MotorGears::rpm_200, pros::v5::MotorUnits::count
 pros::Motor back_R(11, pros::v5::MotorGears::rpm_600, pros::v5::MotorUnits::counts);
 
 // Slama Motors
-pros::Motor slama_L(14, pros::v5::MotorGears::rpm_100, pros::v5::MotorUnits::counts);
+pros::Motor slama_L(16, pros::v5::MotorGears::rpm_100, pros::v5::MotorUnits::counts);
 pros::Motor slama_R(15, pros::v5::MotorGears::rpm_100, pros::v5::MotorUnits::counts);
 
 // Roller Motors
@@ -32,29 +32,29 @@ pros::Motor roller_L(2, pros::v5::MotorGears::rpm_200, pros::v5::MotorUnits::cou
 pros::Motor roller_R(1, pros::v5::MotorGears::rpm_200, pros::v5::MotorUnits::counts);
 
 // Motor Groups
-pros::MotorGroup leftMotors({-18, 19, -20});
-pros::MotorGroup rightMotors({13, -12, 11});
+pros::MotorGroup leftMotors({18, -19, 20});
+pros::MotorGroup rightMotors({-13, 12, -11});
 pros::MotorGroup slamaMotors({-14, 15});
 pros::MotorGroup rollerMotors({-2, 1});
 
 // Wings
 pros::ADIDigitalOut wing_s('A');
 
-
+// Inertial sensor
+pros::Imu imu(14);
 
 // Drivetrain
 lemlib::Drivetrain drivetrain(&leftMotors, // left motor group
-                            &rightMotors, // right motor group
-                            10, // 10 inch track width
-                            lemlib::Omniwheel::OLD_325, // using old 3.25" omni
-                            360, // drivetrain rpm is 360
-                            2 // horizontal drift 
+                              &rightMotors, // right motor group
+                              10, // 10 inch track width
+                              lemlib::Omniwheel::OLD_325, // using old 3.25" omni
+                              360, // drivetrain rpm is 360
+                              2 // horizontal drift 
 );
 
 
 
-// Inertial sensor
-pros::Imu imu(10);
+
 
 // Odom Sensors
 lemlib::OdomSensors sensors(nullptr, // vertical tracking wheel 1, set to null
@@ -70,24 +70,24 @@ lemlib::OdomSensors sensors(nullptr, // vertical tracking wheel 1, set to null
 lemlib::ControllerSettings lateral_controller(10, // proportional gain (kP)
                                               0, // integral gain (kI)
                                               3, // derivative gain (kD)
-                                              3, // anti windup
-                                              1, // small error range, in inches
-                                              100, // small error range timeout, in milliseconds
-                                              3, // large error range, in inches
-                                              500, // large error range timeout, in milliseconds
-                                              20 // maximum acceleration (slew)
+                                              0, // anti windup
+                                              0, // small error range, in inches
+                                              0, // small error range timeout, in milliseconds
+                                              0, // large error range, in inches
+                                              0, // large error range timeout, in milliseconds
+                                              0 // maximum acceleration (slew)
 );
 
 // Angular PID controller
-lemlib::ControllerSettings angular_controller(2, // proportional gain (kP)
+lemlib::ControllerSettings angular_controller(17, // proportional gain (kP)
                                               0, // integral gain (kI)
-                                              10, // derivative gain (kD)
+                                              9.5, // derivative gain (kD)
                                               3, // anti windup
                                               1, // small error range, in degrees
                                               100, // small error range timeout, in milliseconds
                                               3, // large error range, in degrees
                                               500, // large error range timeout, in milliseconds
-                                              0 // maximum acceleration (slew)
+                                              20 // maximum acceleration (slew)
 );
 
 
