@@ -65,11 +65,15 @@ void competition_initialize() {}
  * from where it left off.
  */
 void autonomous() {
-	//close_auton();
-	chassis.setPose(0,0,0);
-	//chassis.turnToHeading(90, 1000);
-	chassis.moveToPoint(0, 48, 1000);
-}
+	close_auton();
+	//chassis.setPose(0,0,0);
+	//chassis.moveToPose(0, 30, 130, 1000);
+	//chassis.moveToPose(0, 70, 0, 1000);
+	//chassis.moveToPose(0, 200, 40, 1000);
+	//chassis.moveToPoint(0, 80, 2000);
+	
+
+	}
 
 /**
  * Runs the operator control code. This function will be started in its own task

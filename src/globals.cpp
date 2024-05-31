@@ -32,9 +32,9 @@ pros::Motor roller_L(2, pros::v5::MotorGears::rpm_200, pros::v5::MotorUnits::cou
 pros::Motor roller_R(1, pros::v5::MotorGears::rpm_200, pros::v5::MotorUnits::counts);
 
 // Motor Groups
-pros::MotorGroup leftMotors({18, -19, 20});
-pros::MotorGroup rightMotors({-13, 12, -11});
-pros::MotorGroup slamaMotors({-14, 15});
+pros::MotorGroup leftMotors({-18, 19, -20});
+pros::MotorGroup rightMotors({13, -12, 11});
+pros::MotorGroup slamaMotors({-16, 15});
 pros::MotorGroup rollerMotors({-2, 1});
 
 // Wings
@@ -67,7 +67,7 @@ lemlib::OdomSensors sensors(nullptr, // vertical tracking wheel 1, set to null
 
 
 // Lateral PID controller
-lemlib::ControllerSettings lateral_controller(10, // proportional gain (kP)
+lemlib::ControllerSettings lateral_controller(25, // proportional gain (kP)
                                               0, // integral gain (kI)
                                               3, // derivative gain (kD)
                                               0, // anti windup
